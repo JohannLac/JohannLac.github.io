@@ -1,21 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # Publications markdown generator for academicpages
-# 
-# Takes a set of bibtex of publications and converts them for use with [academicpages.github.io](academicpages.github.io). This is an interactive Jupyter notebook ([see more info here](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html)). 
-# 
-# The core python code is also in `pubsFromBibs.py`. 
-# Run either from the `markdown_generator` folder after replacing updating the publist dictionary with:
-# * bib file names
-# * specific venue keys based on your bib file preferences
-# * any specific pre-text for specific files
-# * Collection Name (future feature)
-# 
-# TODO: Make this work with other databases of citations, 
-# TODO: Merge this with the existing TSV parsing solution
-
-
 from pybtex.database.input import bibtex
 import pybtex.database.input.bibtex 
 from time import strptime
@@ -24,10 +6,9 @@ import html
 import os
 import re
 
-#todo: incorporate different collection types rather than a catch all publications, requires other changes to template
 publist = {
     "proceeding": {
-        "file" : "proceedings.bib",
+        "file" : "references.bib",
         "venuekey": "booktitle",
         "venue-pretext": "In the proceedings of ",
         "collection" : {"name":"publications",
@@ -35,9 +16,9 @@ publist = {
         
     },
     "journal":{
-        "file": "pubs.bib",
+        "file": "references.bib",
         "venuekey" : "journal",
-        "venue-pretext" : "",
+        "venue-pretext" : "In ",
         "collection" : {"name":"publications",
                         "permalink":"/publication/"}
     } 
@@ -54,6 +35,23 @@ def html_escape(text):
     return "".join(html_escape_table.get(c,c) for c in text)
 
 
+md = "---\n\
+layout: archive\n\
+title: \"Publications\"\n\
+permalink: /publications/\n\
+author_profile: true\n\
+redirect_from:\n\
+  - /publications\n\
+---\n\
+\n\
+{% include base_path %}"
+
+
+#=====================================
+# create list of publications
+#=====================================
+papers = []
+
 for pubsource in publist:
     parser = bibtex.Parser()
     bibdata = parser.parse_file(publist[pubsource]["file"])
@@ -64,9 +62,9 @@ for pubsource in publist:
         pub_year = "1900"
         pub_month = "01"
         pub_day = "01"
-        
+
         b = bibdata.entries[bib_id].fields
-        
+
         try:
             pub_year = f'{b["year"]}'
 
@@ -83,16 +81,15 @@ for pubsource in publist:
             if "day" in b.keys(): 
                 pub_day = str(b["day"])
 
-                
+
             pub_date = pub_year+"-"+pub_month+"-"+pub_day
-            
+
             #strip out {} as needed (some bibtex entries that maintain formatting)
             clean_title = b["title"].replace("{", "").replace("}","").replace("\\","").replace(" ","-")    
 
             url_slug = re.sub("\\[.*\\]|[^a-zA-Z0-9_-]", "", clean_title)
             url_slug = url_slug.replace("--","-")
 
-            md_filename = (str(pub_date) + "-" + url_slug + ".md").replace("--","-")
             html_filename = (str(pub_date) + "-" + url_slug).replace("--","-")
 
             #Build Citation from text
@@ -110,51 +107,35 @@ for pubsource in publist:
 
             citation = citation + " " + html_escape(venue)
             citation = citation + ", " + pub_year + "."
-
             
-            ## YAML variables
-            md = "---\ntitle: \""   + html_escape(b["title"].replace("{", "").replace("}","").replace("\\","")) + '"\n'
-            
-            md += """collection: """ +  publist[pubsource]["collection"]["name"]
+            link = "(https://scholar.google.com/scholar?q="+html.escape(clean_title.replace("-","+"))+")"
 
-            md += """\npermalink: """ + publist[pubsource]["collection"]["permalink"]  + html_filename
-            
-            note = False
-            if "note" in b.keys():
-                if len(str(b["note"])) > 5:
-                    md += "\nexcerpt: '" + html_escape(b["note"]) + "'"
-                    note = True
 
-            md += "\ndate: " + str(pub_date) 
+            ## md citation
+            title = html_escape(b["title"].replace("{", "").replace("}","").replace("\\","")) 
 
-            md += "\nvenue: '" + html_escape(venue) + "'"
-            
-            url = False
-            if "url" in b.keys():
-                if len(str(b["url"])) > 5:
-                    md += "\npaperurl: '" + b["url"] + "'"
-                    url = True
+            papers += [(pub_year, title, citation, link)]
 
-            md += "\ncitation: '" + html_escape(citation) + "'"
-
-            md += "\n---"
-
-            
-            ## Markdown description for individual page
-            if note:
-                md += "\n" + html_escape(b["note"]) + "\n"
-
-            if url:
-                md += "\n[Access paper here](" + b["url"] + "){:target=\"_blank\"}\n" 
-            else:
-                md += "\nUse [Google Scholar](https://scholar.google.com/scholar?q="+html.escape(clean_title.replace("-","+"))+"){:target=\"_blank\"} for full citation"
-
-            md_filename = os.path.basename(md_filename)
-
-            with open("../_publications/" + md_filename, 'w') as f:
-                f.write(md)
             print(f'SUCESSFULLY PARSED {bib_id}: \"', b["title"][:60],"..."*(len(b['title'])>60),"\"")
         # field may not exist for a reference
         except KeyError as e:
-            print(f'WARNING Missing Expected Field {e} from entry {bib_id}: \"', b["title"][:30],"..."*(len(b['title'])>30),"\"")
+            #print(f'WARNING Missing Expected Field {e} from entry {bib_id}: \"', b["title"][:30],"..."*(len(b['title'])>30),"\"")
             continue
+#===================
+# sort papers
+#===================
+sorted_by_year = sorted(papers, key=lambda tup: tup[0])
+
+for paper in sorted_by_year[::-1]:
+    md += paper[1] + '\n'
+    md += "------\n"
+    
+    md += html_escape(paper[2]) + "\n"
+    
+    md += "\n[![pdf](../images/pdf_icon.png)]" + paper[3]
+    
+    md += "\n\n"
+
+
+with open("../_pages/publications.md", 'w') as f:
+    f.write(md)
