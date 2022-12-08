@@ -9,3 +9,5 @@ location: "Clermont-Ferrand, France"
 ---
 
 Introduction to numerical filtering, Z transform, and system modeling
+
+**Download the handout slides [here!](/files/courses/handout_TNS.pdf) (in french)**

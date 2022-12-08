@@ -34,6 +34,20 @@ def html_escape(text):
     """Produce entities within text."""
     return "".join(html_escape_table.get(c,c) for c in text)
 
+keys = { '{\^e}':   'ê',
+         '{\c{c}}': 'ç',
+         '{\`e}':   'è',
+         '{\\\'e}':   'é',
+         '{\\\'\i}':  'ì',
+         'Johann': '**Johann',
+         'Laconte': 'Laconte**',
+        }
+def parse_author(name):
+    name_parsed = str(name)
+    for k1,k2 in keys.items():
+        name_parsed = name_parsed.replace(k1,k2)
+
+    return name_parsed
 
 md = "---\n\
 layout: archive\n\
@@ -93,28 +107,22 @@ for pubsource in publist:
             html_filename = (str(pub_date) + "-" + url_slug).replace("--","-")
 
             #Build Citation from text
-            citation = ""
+            authors = ""
 
             #citation authors - todo - add highlighting for primary author?
             for author in bibdata.entries[bib_id].persons["author"]:
-                citation = citation+" "+author.first_names[0]+" "+author.last_names[0]+", "
-
-            #citation title
-            citation = citation + "\"" + html_escape(b["title"].replace("{", "").replace("}","").replace("\\","")) + ".\""
+                authors = authors +" "+parse_author(author.first_names[0])+" "+parse_author(author.last_names[0])+ ", "
+            authors = authors[:-2]
 
             #add venue logic depending on citation type
             venue = publist[pubsource]["venue-pretext"]+b[publist[pubsource]["venuekey"]].replace("{", "").replace("}","").replace("\\","")
 
-            citation = citation + " " + html_escape(venue)
-            citation = citation + ", " + pub_year + "."
-            
             link = "(https://scholar.google.com/scholar?q="+html.escape(clean_title.replace("-","+"))+")"
-
 
             ## md citation
             title = html_escape(b["title"].replace("{", "").replace("}","").replace("\\","")) 
 
-            papers += [(pub_year, title, citation, link)]
+            papers += [(pub_year, title, authors, pub_year, venue, link)]
 
             print(f'SUCESSFULLY PARSED {bib_id}: \"', b["title"][:60],"..."*(len(b['title'])>60),"\"")
         # field may not exist for a reference
@@ -130,9 +138,10 @@ for paper in sorted_by_year[::-1]:
     md += paper[1] + '\n'
     md += "------\n"
     
-    md += html_escape(paper[2]) + "\n"
+    md += html_escape(paper[2]) + "  \n"
+    md += html_escape(paper[4]) + ", " + html_escape(paper[3]) + "  \n"
     
-    md += "\n[![pdf](../images/pdf_icon.png)]" + paper[3]
+    md += "\n[![pdf](../images/pdf_icon.png)]" + paper[5]
     
     md += "\n\n"
 
