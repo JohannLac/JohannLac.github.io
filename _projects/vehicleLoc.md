@@ -1,23 +1,25 @@
 ---
 title: "Robust ego-vehicle localization on highway"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/projects/loc_highway/preview.jpg'>"
+excerpt: "Robust localization for intelligent vehicles on highways<br/><img src='/images/projects/loc_highway/preview.jpg'>"
 collection: projects
 year: 2018
 ---
 
-TODO
+This project aimed at proposing an end-to-end localization approach for vehicles on highway, from finding on which road the vehicle is traveling, to the localization of the vehicle in its lane.
+
+
 
 References
 ------
-1 - [Lambda-Field: A Continuous Counterpart of the Bayesian Occupancy Grid for Risk Assessment](https://scholar.google.fr/citations?view_op=view_citation&hl=en&user=cVFALvkAAAAJ&citation_for_view=cVFALvkAAAAJ:d1gkVwhDpl0C)\
-Johann Laconte, Christophe Debain, Roland Chapuis, François Pomerleau, Romuald Aufrère\
-2019 International Conference on Intelligent Robots and Systems (IROS)
+1 - [An information driven approach for ego-lane detection using lidar and openstreetmap](https://scholar.google.fr/citations?view_op=view_citation&hl=en&user=cVFALvkAAAAJ&citation_for_view=cVFALvkAAAAJ:IjCSPb-OGe4C)\
+Abderrahim Kasmi, Johann Laconte, Romuald Aufrère, Ruddy Theodose, Dieumet Denis, Rol Chapuis\
+2020 16th International Conference on Control, Automation, Robotics and Vision (ICARCV)
 
-2- [Dynamic Lambda-Field: A Counterpart of the Bayesian Occupancy Grid for Risk Assessment in Dynamic Environments](https://scholar.google.fr/citations?view_op=view_citation&hl=en&user=cVFALvkAAAAJ&citation_for_view=cVFALvkAAAAJ:Y0pCki6q_DkC)\
-Johann Laconte, Elie Randriamiarintsoa, Abderrahim Kasmi, François Pomerleau, Roland Chapuis, Christophe Debain, Romuald Aufrère\
-2019 International Conference on Intelligent Robots and Systems (IROS)
+2- [End-to-end probabilistic ego-vehicle localization framework](https://scholar.google.fr/citations?view_op=view_citation&hl=en&user=cVFALvkAAAAJ&citation_for_view=cVFALvkAAAAJ:qjMakFHDy7sC)\
+Abderrahim Kasmi, Johann Laconte, Romuald Aufrère, Dieumet Denis, Roland Chapuis\
+IEEE Transactions on Intelligent Vehicles
 
-3- [A Novel Occupancy Mapping Framework for Risk-Aware Path Planning in Unstructured Environments](https://scholar.google.fr/citations?view_op=view_citation&hl=en&user=cVFALvkAAAAJ&citation_for_view=cVFALvkAAAAJ:YsMSGLbcyi4C)\
-Johann Laconte, Abderrahim Kasmi, François Pomerleau, Roland Chapuis, Laurent Malaterre, Christophe Debain, Romuald Aufrère\
+3- [A survey of localization methods for autonomous vehicles in highway scenarios](https://scholar.google.fr/citations?view_op=view_citation&hl=en&user=cVFALvkAAAAJ&citation_for_view=cVFALvkAAAAJ:WF5omc3nYNoC)\
+Johann Laconte, Abderrahim Kasmi, Romuald Aufrère, Maxime Vaidis, Roland Chapuis
 Sensors 2021
 

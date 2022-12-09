@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/autom_ISIMA
 venue: "ISIMA, Clermont Auvergne INP"
-date: 2018-01-01
+period: "2018 - 2021"
 location: "Clermont-Ferrand, France"
 ---
 

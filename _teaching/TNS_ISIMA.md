@@ -4,7 +4,7 @@ collection: teaching
 type: "Graduate course"
 permalink: /teaching/TNS_ISIMA
 venue: "ISIMA, Clermont Auvergne INP"
-date: 2018-01-01
+period: "2018 - 2021"
 location: "Clermont-Ferrand, France"
 ---
 

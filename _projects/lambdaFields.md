@@ -1,11 +1,24 @@
 ---
 title: "Safe navigation in occupancy grids"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/projects/LF/preview.jpg'>"
+excerpt: "Safe navigation with physics-oriented risks metrics<br/><img src='/images/projects/LF/preview.jpg'>"
 collection: projects
 year: 2018
 ---
 
-TODO
+This project aimed at developing a novel occupancy grid framework for safe navigation.
+The central motivation comes from the fact that it is not possible, using standard Bayesian occupancy grids, to infer a meaningful risk for a continuous path in the environment.
+
+As such, we proposed a method to map the environment not with the probability of occupancy, but with the density of possible collisions.
+This novel formulation lead to a heavily generalizable framework where any physical risk can be inferred (e.g., loss of kinetic energy).
+
+For instance, the framework allows the robot to navigate in unstructured environments such as tall grass: given a probabilistic information of the obstacles' mass in front of the robot, it can either choose to go through the grass or to go around.
+Such decision can be motivated by the mass of the robot itself, the confidence about the grass not hiding any hazardous obstacles, and so on.
+
+![crossroad picture](/images/projects/LF/robot_tallgrass.jpg)
+
+The framework have been extended to dynamic environments, where the risk inference can once again help taking meaningful decisions in case of hazardous scenarios.
+
+![crossroad picture](/images/projects/LF/crossroads.jpg)
 
 References
 ------
