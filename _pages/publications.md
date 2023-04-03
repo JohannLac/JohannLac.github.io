@@ -7,26 +7,26 @@ redirect_from:
   - /publications
 ---
 
-{% include base_path %}Extrinsic calibration for highly accurate trajectories reconstruction
+{% include base_path %}Need for Speed: Fast Correspondence-Free Lidar Odometry Using Doppler Velocity
+------
+ David Yoon,  Keenan Burnett,  **Johann Laconte**,  Yi Chen,  Heethesh Vhavle,  Soeren Kammel,  James Reuther,  Timothy Barfoot  
+In Submitted to IROS, 2023  
+
+[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=Need+for+Speed:+Fast+Correspondence+Free+Lidar+Odometry+Using+Doppler+Velocity)
+
+Extrinsic calibration for highly accurate trajectories reconstruction
 ------
  Maxime Vaidis,  William Dubois,  Alexandre Guénette,  **Johann Laconte**,  Vladimìr Kubelka,  François Pomerleau  
-In arXiv preprint arXiv:2210.01048, 2022  
+In 2023 International Conference on Robotics and Automation (ICRA), 2023  
 
 [![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=Extrinsic+calibration+for+highly+accurate+trajectories+reconstruction)
 
-On the Importance of Quantifying Visibility for Autonomous Vehicles under Extreme Precipitation
+On the Importance of Quantifying Visibility for Autonomous Vehicles Under Extreme Precipitation
 ------
  Clément Courcelle,  Dominic Baril,  François Pomerleau,  **Johann Laconte**  
-In arXiv preprint arXiv:2209.03226, 2022  
+In Towards Human-Vehicle Harmonization, 2023  
 
-[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=On+the+Importance+of+Quantifying+Visibility+for+Autonomous+Vehicles+under+Extreme+Precipitation)
-
-Kilometer-scale autonomous navigation in subarctic forests: challenges and lessons learned
-------
- Dominic Baril,  Simon-Pierre Deschênes,  Olivier Gamache,  Maxime Vaidis,  Damien LaRocque,  **Johann Laconte**,  Vladimìr Kubelka,  Philippe Giguère,  François Pomerleau  
-In Field Robotics, 2022  
-
-[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=Kilometer+scale+autonomous+navigation+in+subarctic+forests:+challenges+and+lessons+learned)
+[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=On+the+Importance+of+Quantifying+Visibility+for+Autonomous+Vehicles+Under+Extreme+Precipitation)
 
 A survey of localization methods for autonomous vehicles in highway scenarios
 ------
@@ -35,12 +35,19 @@ In Sensors, 2021
 
 [![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=A+survey+of+localization+methods+for+autonomous+vehicles+in+highway+scenarios)
 
-A Novel Occupancy Mapping Framework for Risk-Aware Path Planning in Unstructured Environments
+Kilometer-scale autonomous navigation in subarctic forests: challenges and lessons learned
+------
+ Dominic Baril,  Simon-Pierre Deschênes,  Olivier Gamache,  Maxime Vaidis,  Damien LaRocque,  **Johann Laconte**,  Vladimìr Kubelka,  Philippe Giguère,  François Pomerleau  
+In arXiv preprint arXiv:2111.13981, 2021  
+
+[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=Kilometer+scale+autonomous+navigation+in+subarctic+forests:+challenges+and+lessons+learned)
+
+A novel occupancy mapping framework for risk-aware path planning in unstructured environments
 ------
  **Johann Laconte**,  Abderrahim Kasmi,  François Pomerleau,  Roland Chapuis,  Laurent Malaterre,  Christophe Debain,  Romuald Aufrère  
 In Sensors, 2021  
 
-[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=A+Novel+Occupancy+Mapping+Framework+for+Risk+Aware+Path+Planning+in+Unstructured+Environments)
+[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=A+novel+occupancy+mapping+framework+for+risk+aware+path+planning+in+unstructured+environments)
 
 Toward a Generalized Risk Assessment Method on Occupancy Grids
 ------
@@ -77,19 +84,19 @@ In the proceedings of IROS 2020 Workshop: Bringing geometric methods to robot le
 
 [![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=Improving+the+Iterative+Closest+Point+Algorithm+using+Lie+Algebra)
 
-An information driven approach for ego-lane detection using lidar and openstreetmap
+An information driven approach for ego-lane detection using Lidar and OpenStreetMap
 ------
  Abderrahim Kasmi,  **Johann Laconte**,  Romuald Aufrère,  Ruddy Theodose,  Dieumet Denis,  Rol Chapuis  
 In the proceedings of 2020 16th International Conference on Control, Automation, Robotics and Vision (ICARCV), 2020  
 
-[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=An+information+driven+approach+for+ego+lane+detection+using+lidar+and+openstreetmap)
+[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=An+information+driven+approach+for+ego+lane+detection+using+Lidar+and+OpenStreetMap)
 
-Evaluation of Skid-Steering Kinematic Models for Subarctic Environments
+Evaluation of skid-steering kinematic models for subarctic environments
 ------
  Dominic Baril,  Vincent Grondin,  Simon-Pierre Deschênes,  **Johann Laconte**,  Maxime Vaidis,  Vladimìr Kubelka,  André Gallant,  Philippe Giguere,  François Pomerleau  
 In the proceedings of 2020 17th Conference on Computer and Robot Vision (CRV), 2020  
 
-[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=Evaluation+of+Skid+Steering+Kinematic+Models+for+Subarctic+Environments)
+[![pdf](../images/pdf_icon.png)](https://scholar.google.com/scholar?q=Evaluation+of+skid+steering+kinematic+models+for+subarctic+environments)
 
 Lambda-Field: A Continuous Counterpart of the Bayesian Occupancy Grid for Risk Assessment
 ------

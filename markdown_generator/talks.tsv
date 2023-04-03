@@ -1,2 +1,6 @@
 title	type	url_slug	venue	date	location	talk_url	description
-Lambda-Field: a Novel Framework For Risk Assessment In Occupancy Grids	Talk	talk-1	University of Technology of Compiègne (UTC)	2022-03-04	Compiegne, France		Presentation of the work done during my Ph.D. Thesis
+Lambda-Field: a Novel Framework For Risk Assessment In Occupancy Grids	Talk	Talk-1	University of Technology of Compiègne (UTC)	2022-03-04	Compiegne, France		Presentation of the work done during my Ph.D. Thesis about the construction of safety maps for autonomous navigation
+Stochastic calculus for robotics	Tutorial	Talk-2	Laval University	2022-06-22	Québec, Canada		Tutorial on stochastic calculus and gaussian processes for robotics (Ito/Stratonovivh calculus)
+Tikz and Manim – drawing utilities for research 	Tutorial	Talk-3	Laval University	2022-07-07	Québec, Canada		Tutorial on basic use of tikz (figures) and manim (videos) for the upcoming submissions at ICRA 2023
+Robotics deployments in subarctic environments – challenges and lessons learned	Talk	Talk-4	University of Toronto (UofT)	2022-10-01	Toronto, Canada		Presentation of the deployments made with Laval University in subarctic environments, north of Québec
+Modern tools for safe state estimation in robotics	Talk	Talk-5	University Clermont Auvergne (UCA)	2023-03-02	Clermont-Ferrand, France		Presentation of the modern estimation machinery developped at the University of Toronto (ASRL lab)

@@ -15,5 +15,4 @@ I got my Ph.D. from [Université Clermont Auvergne (UCA)](https://www.uca.fr/) a
 This work was awarded the second prize for the [best french Ph.D. thesis in robotics](https://www.gdr-robotique.org/prix_de_these/?an=2021).
 
 My research interests are broad and extend from applied mathematics to field robotics.
-I am currently focusing on working with Lie groups for more accurate state estimation in the context of intelligent vehicles.
-
+I am currently focusing on safe localization by developing tools that certify state estimation algorithms.
